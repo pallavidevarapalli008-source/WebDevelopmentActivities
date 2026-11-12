@@ -1,1 +1,369 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ShopEasy - Online Shopping</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        /* Navigation Bar */
+        header {
+            background: #222;
+            color: white;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            color: orange;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 12px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        /* Promotional Banner */
+        .banner {
+            background: linear-gradient(120deg, #ff9800, #ff5722);
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .banner h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .banner p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .banner button {
+            padding: 12px 25px;
+            background: white;
+            color: #ff5722;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Categories */
+        .categories {
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .categories h2 {
+            margin-bottom: 20px;
+        }
+
+        .category-list {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .category {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px #ccc;
+        }
+
+        /* Products */
+        .products {
+            padding: 30px 6%;
+        }
+
+        .products h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 3px 10px #ddd;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 12px;
+        }
+
+        .discount {
+            background: #e53935;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .product-card h3 {
+            margin: 10px 0;
+        }
+
+        .description {
+            color: #666;
+            font-size: 13px;
+            margin: 10px 0;
+        }
+
+        .rating {
+            color: #ff9800;
+            margin: 8px;
+        }
+
+        .price {
+            color: green;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .old-price {
+            color: gray;
+            text-decoration: line-through;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+
+        .product-card button {
+            background: #222;
+            color: white;
+            border: none;
+            padding: 11px 20px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .product-card button:hover {
+            background: #ff9800;
+        }
+
+        /* Second Banner */
+        .offer {
+            background: #263238;
+            color: white;
+            text-align: center;
+            padding: 35px;
+            margin-top: 30px;
+        }
+
+        .offer h2 {
+            color: #ffca28;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .banner h2 {
+                font-size: 26px;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <h1>ShopEasy</h1>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#products">Products</a>
+            <a href="#offers">Offers</a>
+            <a href="#contact">Contact</a>
+            <a href="#products">🛒 Cart</a>
+        </nav>
+    </header>
+
+    <!-- Promotional Banner -->
+    <section class="banner">
+        <h2>Big Shopping Festival!</h2>
+        <p>Get up to 50% OFF on your favourite products.</p>
+        <button onclick="location.href='#products'">
+            Shop Now
+        </button>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="categories">
+        <h2>Shop By Category</h2>
+
+        <div class="category-list">
+            <div class="category">📱 Electronics</div>
+            <div class="category">👕 Fashion</div>
+            <div class="category">⌚ Accessories</div>
+            <div class="category">🏠 Home Decor</div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+        <h2>Featured Products</h2>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Headphones">
+                <span class="discount">30% OFF</span>
+                <h3>Wireless Headphones</h3>
+                <p class="description">
+                    Premium sound quality with comfortable design.
+                </p>
+                <p class="rating">★★★★★ (4.5)</p>
+                <p class="price">₹1,399
+                    <span class="old-price">₹1,999</span>
+                </p>
+                <button onclick="alert('Headphones added to cart!')">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Watch">
+                <span class="discount">25% OFF</span>
+                <h3>Classic Watch</h3>
+                <p class="description">
+                    Stylish watch suitable for every occasion.
+                </p>
+                <p class="rating">★★★★☆ (4.2)</p>
+                <p class="price">₹2,249
+                    <span class="old-price">₹2,999</span>
+                </p>
+                <button onclick="alert('Watch added to cart!')">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400" alt="Camera">
+                <span class="discount">20% OFF</span>
+                <h3>Digital Camera</h3>
+                <p class="description">
+                    Capture beautiful moments with high-quality images.
+                </p>
+                <p class="rating">★★★★★ (4.8)</p>
+                <p class="price">₹7,999
+                    <span class="old-price">₹9,999</span>
+                </p>
+                <button onclick="alert('Camera added to cart!')">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" alt="Shoes">
+                <span class="discount">40% OFF</span>
+                <h3>Sports Shoes</h3>
+                <p class="description">
+                    Lightweight and comfortable everyday footwear.
+                </p>
+                <p class="rating">★★★★☆ (4.3)</p>
+                <p class="price">₹1,799
+                    <span class="old-price">₹2,999</span>
+                </p>
+                <button onclick="alert('Shoes added to cart!')">
+                    Add to Cart
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Special Offer -->
+    <section class="offer" id="offers">
+        <h2>Special Weekend Sale!</h2>
+        <p>Extra 10% discount on selected products.</p>
+        <p>Hurry Up! Limited Time Offers.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <h3>ShopEasy</h3>
+        <p>Your One-Stop Online Shopping Destination</p>
+        <p>Contact: support@shopeasy.com</p>
+        <p>© 2026 ShopEasy. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+
